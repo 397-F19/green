@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -35,6 +34,7 @@ const EventCheckboxesGroup =() =>{
 			setCheckboxState(checkboxState);
 		};
 		fetchEventNames();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const handleChange = eventName => event => {

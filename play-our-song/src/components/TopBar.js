@@ -64,7 +64,7 @@ const TopBar = ({ token , profilePic, username}) => {
                 </Typography>
                 <div className={classes.grow} />
                 <Button className={classes.button} color="inherit" onClick={() => ctx.open[1](true)}>
-                {ctx.playlistTitle[0]}
+                {ctx? ctx.playlistTitle[0]:''}
                 </Button>
                 <div className={classes.grow} />
                 {!token && (

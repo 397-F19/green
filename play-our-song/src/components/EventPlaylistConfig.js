@@ -13,6 +13,7 @@ import EventCheckboxesGroup from "./EventCheckboxesGroup";
 var client_id = 'b1bcbd4ae171494db0dbd3a736535946'; // Your client id
 var client_secret = '27127362e5174286a15516cc33a96998'; // Your secret
 // var redirect_uri = 'http://www.google.com'; // Your redirect urib
+// eslint-disable-next-line no-unused-vars
 var user_id = 'p7x48c95ztmvh1ry6umg0h82f'
 var SpotifyWebApi = require('spotify-web-api-node');
 // credentials are optional
@@ -26,6 +27,7 @@ spotifyApi.setAccessToken('BQBNXuIYqvAnjRf88UtATB6hNBydlF6KxmYicXJq2xjpHTmIrXt_8
 
 const EventPlaylistConfig = ({setTracks, userId, authToken, forceUpdate}) =>{
 	const [eventToGenres, setEventToGenres] = useState({});
+	// eslint-disable-next-line no-unused-vars
 	const [playlistId, setPlaylistId] = useState(null);
 
 	useEffect(() => {
@@ -48,7 +50,7 @@ const EventPlaylistConfig = ({setTracks, userId, authToken, forceUpdate}) =>{
 	const handleGenerate = () => {
 		console.log('handleGenerate clicked');
 		console.log(ctx);
-		ctx.open[1](false);;
+		ctx.open[1](false);
 		// TODO: @Timo get form information
 		const playlistTitle = ctx.playlistTitle[0];
 		const playlistEvents = ctx.playlistEvents[0];
@@ -131,7 +133,7 @@ const EventPlaylistConfig = ({setTracks, userId, authToken, forceUpdate}) =>{
 
 	return (
     <div>
-      <Dialog open={ctx.open[0]} onClose={() => ctx.open[1](false)} aria-labelledby="form-dialog-title">
+      <Dialog open={ctx? ctx.open[0]:false} onClose={() => ctx.open[1](false)} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Generate your playlist in one step</DialogTitle>
         <DialogContent>
           <DialogContentText>
